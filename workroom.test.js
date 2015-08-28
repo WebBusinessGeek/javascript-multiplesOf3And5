@@ -95,10 +95,23 @@ describe("isArray", function() {
 	
 });
 
-
+/*
+* Test Suite for function isAMultiple
+*/
 describe("isAMultiple", function() {
-	
-})
+	it("should return true if 9 is the first parameter and 3 is the second parameter", function() {
+		expect(isAMultiple(9, 3)).toBe(true);
+	});
+	it("should return true if 10 is the first parameter and 5 is the second parameter", function() {
+		expect(isAMultiple(10, 5)).toBe(true);
+	});
+	it("should return false if 11 is the first parameter and 3 is the second parameter", function() {
+		expect(isAMultiple(11, 3)).toBe(false);
+	});
+	it("should return false if 24 is the first parameter and 25 is the second parameter", function() {
+		expect(isAMultiple(24, 25)).toBe(false);
+	});
+});
 
 
 

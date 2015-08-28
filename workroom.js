@@ -64,3 +64,14 @@ function isArray(valueToTest) {
 	}
 	return false;
 }
+
+/*
+* Returns true if first argument is a multiple of the second argument
+* Returns false otherwise.
+*/
+function isAMultiple(valueToTest, multiple) {
+	if(valueToTest % multiple === 0) {
+		return true;
+	}
+	return false;
+}
