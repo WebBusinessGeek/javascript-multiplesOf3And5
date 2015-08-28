@@ -19,6 +19,15 @@
 
 
 describe("findMultiplesWithinRange", function() {
+	beforeEach(function() {
+		validMuliplesArray = [3,5];
+	});
+	it("should return an error message if -1 given as first argument", function() {
+		expect(findMultiplesWithinRange(-1, 10, validMuliplesArray)).toBe('Invalid argument supplied for rangeStart - should be zero or a whole number');
+	});
+	it("should return an error message if -1 given as second argument", function() {
+		expect(findMultiplesWithinRange(10, -1, validMuliplesArray)).toBe('Invalid argument supplied for rangeStop - should be zero or a whole number');
+	});
 	
 });
 

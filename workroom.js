@@ -17,12 +17,15 @@
 	//it should return an array containing all the multiples within the range given
 	//it should return an return an array of 3, 5, 6, 9 for a range of 0 to 10
 
-//method 2 addAllIntegerValuesInArray(array) should return an integer
-	//it should return an integer equal to the sum of all integers found in the array
-	//it should return an error if argument is not an array
+
 
 function findMultiplesWithinRange(rangeStart, rangeStop, multiples) {
-	//isZeroOrWholeNumber
+	if(!isZeroOrWholeNumber(rangeStart)) {
+		return 'Invalid argument supplied for rangeStart - should be zero or a whole number';
+	}	
+	if(!isZeroOrWholeNumber(rangeStop)) {
+		return 'Invalid argument supplied for rangeStop - should be zero or a whole number'
+	}
 	//isGreaterThan
 	//isArray
 	//isAMultiple
@@ -75,3 +78,13 @@ function isAMultiple(valueToTest, multiple) {
 	}
 	return false;
 }
+
+
+
+
+
+
+
+//method 2 addAllIntegerValuesInArray(array) should return an integer
+//it should return an integer equal to the sum of all integers found in the array
+//it should return an error if argument is not an array
