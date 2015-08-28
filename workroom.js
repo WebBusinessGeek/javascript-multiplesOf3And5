@@ -9,16 +9,12 @@
 
 
 
-//method 1 findMultiplesWithinRange(rangeStart, rangeStop, multiples = []) should return an array containing all the multiples
-	//it should return an error if integers not given as first argument
-	//it should return an error if integer not given as second argument
-	//it should return an error if first argument is greater than the second
-	//it should return an error if array not given as third argument
-	//it should return an array containing all the multiples within the range given
-	//it should return an return an array of 3, 5, 6, 9 for a range of 0 to 10
-
-
-
+/*
+* Returns an array containing all numbers from rangeStart to rangeStop that are multiples of the values passed as multiples array
+* Returns error if rangeStart or rangeStop is not zero or a whole number
+* Returns error if rangeStart is greater than rangeStop
+* Returns error if multiples is not an array
+*/
 function findMultiplesWithinRange(rangeStart, rangeStop, multiples) {
 	if(!isZeroOrWholeNumber(rangeStart)) {
 		return 'Invalid argument supplied for rangeStart - should be zero or a whole number';
@@ -32,8 +28,15 @@ function findMultiplesWithinRange(rangeStart, rangeStop, multiples) {
 	if(isGreaterThan(rangeStart, rangeStop)) {
 		return 'Invalid arguments for rangeStart and rangeStop - rangeStart can not be greater than rangeStop';
 	}
+	results = [];
 	
-	//isAMultiple
+	while(rangeStart <= rangeStop) {
+		for(arrayCounter = 0; arrayCounter < multiples.length; arrayCounter++) {
+			ifMultiple = (isAMultiple(rangeStart, multiples[arrayCounter])) ? results.push(rangeStart) : 'not a multiple' ;
+		}
+		rangeStart++;
+	}
+	return results;
 }
 
 /*
@@ -78,7 +81,7 @@ function isArray(valueToTest) {
 * Returns false otherwise.
 */
 function isAMultiple(valueToTest, multiple) {
-	if(valueToTest % multiple === 0) {
+	if(valueToTest % multiple === 0 && valueToTest != 0) {
 		return true;
 	}
 	return false;

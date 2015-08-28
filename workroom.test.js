@@ -1,19 +1,6 @@
-//If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
-//
-//Find the sum of all the multiples of 3 or 5 below 1000.
-
-
-//In order to pass the test we have to:
-//	find the multiples of 3 or 5 below 1000
-//	add those multiples up and return the sum
-
-
-
-//method 1 findMultiplesWithinRange(rangeStart, rangeStop, multiples = []) should return an array containing all the multiples
-	//it should return an array containing all the multiples within the range given
-	//it should return an return an array of 3, 5, 6, 9 for a range of 0 to 10 and
-
-
+/*
+* Test Suite for findMultiplesWithinRange function
+*/
 describe("findMultiplesWithinRange", function() {
 	beforeEach(function() {
 		validMuliplesArray = [3,5];
@@ -36,6 +23,13 @@ describe("findMultiplesWithinRange", function() {
 		expect(result[1]).toBe(5);
 		expect(result[2]).toBe(6);
 		expect(result[3]).toBe(9);
+	});
+	it("should return an array that contains 2, 4, 6, 8 when passed 0, 9, and [2] as arguments", function() {
+		result = findMultiplesWithinRange(0, 9, [2]);
+		expect(result[0]).toBe(2);
+		expect(result[1]).toBe(4);
+		expect(result[2]).toBe(6);
+		expect(result[3]).toBe(8);
 	});
 	
 });
