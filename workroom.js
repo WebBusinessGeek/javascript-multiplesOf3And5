@@ -32,8 +32,7 @@ function findMultiplesWithinRange(rangeStart, rangeStop, multiples) {
 	if(isGreaterThan(rangeStart, rangeStop)) {
 		return 'Invalid arguments for rangeStart and rangeStop - rangeStart can not be greater than rangeStop';
 	}
-	//isGreaterThan
-	//isArray
+	
 	//isAMultiple
 }
 
