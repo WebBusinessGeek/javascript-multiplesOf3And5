@@ -26,6 +26,9 @@ function findMultiplesWithinRange(rangeStart, rangeStop, multiples) {
 	if(!isZeroOrWholeNumber(rangeStop)) {
 		return 'Invalid argument supplied for rangeStop - should be zero or a whole number'
 	}
+	if(!isArray(multiples)) {
+		return 'Invalid argument supplied for multiples - should be an array';
+	}
 	//isGreaterThan
 	//isArray
 	//isAMultiple

@@ -11,8 +11,6 @@
 
 //method 1 findMultiplesWithinRange(rangeStart, rangeStop, multiples = []) should return an array containing all the multiples
 	//it should return an array containing all the multiples within the range given
-	//it should return an error if integers not given as first argument
-	//it should return an error if integer not given as second argument
 	//it should return an error if first argument is greater than the second
 	//it should return an error if array not given as third argument
 	//it should return an return an array of 3, 5, 6, 9 for a range of 0 to 10
@@ -27,6 +25,9 @@ describe("findMultiplesWithinRange", function() {
 	});
 	it("should return an error message if -1 given as second argument", function() {
 		expect(findMultiplesWithinRange(10, -1, validMuliplesArray)).toBe('Invalid argument supplied for rangeStop - should be zero or a whole number');
+	});
+	it("should return an error if 4 is given as third argument", function() {
+		expect(findMultiplesWithinRange(1, 10, 4)).toBe('Invalid argument supplied for multiples - should be an array');
 	});
 	
 });
