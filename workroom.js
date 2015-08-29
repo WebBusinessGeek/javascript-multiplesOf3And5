@@ -1,9 +1,15 @@
 /*
 * Returns sum of all numbers from rangeStart to rangeStop that were multiples of integers passed in the multiples array.
 */
-function findSumOfMultiplesWithinRange(rangeStart, rangeStop, multiples) {
+function findSumOfMultiplesWithinRange(rangeStart, rangeStop, multiples, preventDuplicates) {
 	multiplesWithinRange = findMultiplesWithinRange(rangeStart, rangeStop, multiples);
-	return addAllIntegerValuesInArray(multiplesWithinRange);
+	if(preventDuplicates == undefined || preventDuplicates == false) {
+		return addAllIntegerValuesInArray(multiplesWithinRange);
+	}
+	if(preventDuplicates == true) {
+		multiplesWithinRangeWithoutDuplicates = removeDuplicatesFromArray(multiplesWithinRange);
+		return addAllIntegerValuesInArray(multiplesWithinRangeWithoutDuplicates);
+	}
 }
 
 /*
@@ -47,6 +53,14 @@ function addAllIntegerValuesInArray(arrayToSum) {
 	return arrayToSum.reduce(function(a,b) {
 		return a + b;
 	});
+	
+}
+
+function removeDuplicatesFromArray(arrayToRemoveDuplicatesFrom) {
+	if(!isArray(arrayToRemoveDuplicatesFrom))
+	{
+		return 'Invalid argument supplied for arrayToRemoveDuplicatesFrom - must be an array';
+	}
 	
 }
 

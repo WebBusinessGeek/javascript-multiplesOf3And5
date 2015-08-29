@@ -20,6 +20,9 @@ describe("findSumOfMultiplesWithinRange", function () {
 	it("should return ??? if arguments are 0, 999, [3,5]", function() {
 		expect(findSumOfMultiplesWithinRange(0, 999, [3,5])).toBe(266333);
 	});
+//	it("should return 233168 if agruments are 0, 999, [3,5], true", function() {
+//		expect(findSumOfMultiplesWithinRange(0, 999, [3,5], true)).toBe(233168);
+//	});
 	
 });
 
@@ -77,6 +80,25 @@ describe("addAllIntegerValuesInArray", function() {
 		expect(addAllIntegerValuesInArray([1,2,5,0])).toBe(8);
 	});
 });
+
+
+/*
+* Test Suite for removeDuplicatesFromArray function
+*/
+describe("removeDuplicatesFromArray", function() {
+	it("should return an error if argument is not an array", function() {
+		expect(removeDuplicatesFromArray(1)).toBe('Invalid argument supplied for arrayToRemoveDuplicatesFrom - must be an array');
+	});
+	it("should return an array equal to [1,2,3,4] if argument is [1,1,2,2,3,3,4,4]", function() {
+		result = removeDuplicatesFromArray([1,1,2,2,3,3,4,4]);
+		expect(result[0]).toBe(1);
+		expect(result[1]).toBe(2);
+		expect(result[2]).toBe(3);
+		expect(result[3]).toBe(4);
+	});
+})
+
+
 
 /*
 * Test Suite for isZeroOrWholeNumber function
