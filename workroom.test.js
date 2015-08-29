@@ -1,4 +1,30 @@
 /*
+* Test Suite for findSumOfMultiplesWithinRange function
+*/
+describe("findSumOfMultiplesWithinRange", function () {
+	it("should return 23 if arguments are 0, 9, [3,5]", function() {
+		expect(findSumOfMultiplesWithinRange(0, 9, [3,5])).toBe(23);
+	});
+	it("should return 20 if arguments are  0, 9, and [2]", function() {
+		expect(findSumOfMultiplesWithinRange(0, 9, [2])).toBe(20);
+	});
+	it("should return 630 if arguments are 0, 60, and [3]", function() {
+		expect(findSumOfMultiplesWithinRange(0, 60, [3])).toBe(630);
+	});
+	it("should return 3150 if arguments are 0, 300, [15]", function() {
+		expect(findSumOfMultiplesWithinRange(0, 300, [15])).toBe(3150);
+	});
+	it("should return 18300 if arguments are 0, 300, [3,15]", function() {
+		expect(findSumOfMultiplesWithinRange(0, 300, [3,15])).toBe(18300);
+	});
+	it("should return ??? if arguments are 0, 999, [3,5]", function() {
+		expect(findSumOfMultiplesWithinRange(0, 999, [3,5])).toBe(266333);
+	});
+	
+});
+
+
+/*
 * Test Suite for findMultiplesWithinRange function
 */
 describe("findMultiplesWithinRange", function() {
@@ -32,6 +58,24 @@ describe("findMultiplesWithinRange", function() {
 		expect(result[3]).toBe(8);
 	});
 	
+});
+
+/*
+* Test Suite for addAllIntegerValuesInArray
+*/
+describe("addAllIntegerValuesInArray", function() {
+	it("should return an error if argument is 1", function() {
+		expect(addAllIntegerValuesInArray(1)).toBe('Invalid argument supplied for arrayToSum - must be an array');
+	});
+	it("should return an error if argument is 'string'", function() {
+		expect(addAllIntegerValuesInArray('string')).toBe('Invalid argument supplied for arrayToSum - must be an array');
+	});
+	it("should return 3 if argument is [1,1,1]", function() {
+		expect(addAllIntegerValuesInArray([1,1,1])).toBe(3);
+	});
+	it("should return 8 if argument is [1,2,5,0]", function() {
+		expect(addAllIntegerValuesInArray([1,2,5,0])).toBe(8);
+	});
 });
 
 /*
@@ -127,11 +171,3 @@ describe("isAMultiple", function() {
 
 
 
-
-
-//method 2 addAllIntegerValuesInArray(array) should return an integer
-	//it should return an integer equal to the sum of all integers found in the array
-	//it should return an error if argument is not an array
-describe("addAllIntegerValuesInArray", function() {
-	
-});

@@ -1,13 +1,10 @@
-//If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
-//
-//Find the sum of all the multiples of 3 or 5 below 1000.
-
-
-//In order to pass the test we have to:
-//	find the multiples of 3 or 5 below 1000
-//	add those multiples up and return the sum
-
-
+/*
+* Returns sum of all numbers from rangeStart to rangeStop that were multiples of integers passed in the multiples array.
+*/
+function findSumOfMultiplesWithinRange(rangeStart, rangeStop, multiples) {
+	multiplesWithinRange = findMultiplesWithinRange(rangeStart, rangeStop, multiples);
+	return addAllIntegerValuesInArray(multiplesWithinRange);
+}
 
 /*
 * Returns an array containing all numbers from rangeStart to rangeStop that are multiples of the values passed as multiples array
@@ -37,6 +34,20 @@ function findMultiplesWithinRange(rangeStart, rangeStop, multiples) {
 		rangeStart++;
 	}
 	return results;
+}
+
+/*
+* Returns the sum of the array passed as an arrayToSum argument
+* Returns error message if arrayToSum arguments is not an array
+*/
+function addAllIntegerValuesInArray(arrayToSum) {
+	if(!isArray(arrayToSum)) {
+		return 'Invalid argument supplied for arrayToSum - must be an array';
+	}
+	return arrayToSum.reduce(function(a,b) {
+		return a + b;
+	});
+	
 }
 
 /*
@@ -87,12 +98,3 @@ function isAMultiple(valueToTest, multiple) {
 	return false;
 }
 
-
-
-
-
-
-
-//method 2 addAllIntegerValuesInArray(array) should return an integer
-//it should return an integer equal to the sum of all integers found in the array
-//it should return an error if argument is not an array
