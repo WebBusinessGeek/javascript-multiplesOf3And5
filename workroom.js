@@ -56,12 +56,22 @@ function addAllIntegerValuesInArray(arrayToSum) {
 	
 }
 
+/*
+* Removes duplicate values from an array
+*/
 function removeDuplicatesFromArray(arrayToRemoveDuplicatesFrom) {
 	if(!isArray(arrayToRemoveDuplicatesFrom))
 	{
 		return 'Invalid argument supplied for arrayToRemoveDuplicatesFrom - must be an array';
 	}
-	
+	arrayToReturn = [];
+	for(var counter = 0; counter < arrayToRemoveDuplicatesFrom.length; counter++) {
+		valueToPushIfNotPresent = arrayToRemoveDuplicatesFrom[counter];
+		if(arrayToReturn.indexOf(valueToPushIfNotPresent) == -1) {
+			arrayToReturn.push(valueToPushIfNotPresent);
+		}
+	}
+	return arrayToReturn;
 }
 
 /*

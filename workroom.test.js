@@ -20,9 +20,9 @@ describe("findSumOfMultiplesWithinRange", function () {
 	it("should return ??? if arguments are 0, 999, [3,5]", function() {
 		expect(findSumOfMultiplesWithinRange(0, 999, [3,5])).toBe(266333);
 	});
-//	it("should return 233168 if agruments are 0, 999, [3,5], true", function() {
-//		expect(findSumOfMultiplesWithinRange(0, 999, [3,5], true)).toBe(233168);
-//	});
+	it("should return 233168 if agruments are 0, 999, [3,5], true", function() {
+		expect(findSumOfMultiplesWithinRange(0, 999, [3,5], true)).toBe(233168);
+	});
 	
 });
 
